@@ -20,7 +20,6 @@ Proyecto_FF9_Web/
 │       └── img/
 │           ├── header-ff9.jpg
 │           ├── personajes/*.jpg
-│           └── <nombre>.jpg|png|webp (opcional, alternativa en img raíz)
 ├── diagrama_bd.png
 ├── README.md
 └── README.rd
@@ -126,62 +125,6 @@ Para evitar mostrar datos ficticios, se respetan estas limitaciones del modelo e
 ## 10. Estadísticas y crecimiento
 
 La página inicia los personajes con los valores de nivel 1 de FFIX. Las estadísticas derivadas de cada nivel se calculan con las fórmulas de crecimiento del juego y con los modificadores HP/MP por nivel. Las bonificaciones de equipo se suman al contador de crecimiento cuando se gana un nivel con esa arma equipada. Los valores exactos pueden consultarse en las referencias incluidas al final de este documento.
-
-## 11. Fuente Alexandria
-
-El CSS conserva `Alexandria` como primera familia tipográfica y la busca como fuente instalada en el sistema. El archivo OTF que venía en el proyecto original no se redistribuye ni se sirve como webfont: la licencia adjunta prohíbe distribuirlo y utilizarlo como fuente web. Para que el navegador local lo muestre, instala en Windows tu copia original de Alexandria (doble clic en el OTF y seleccionar **Instalar**) y vuelve a abrir la página. Si no está instalada, se utilizará una fuente alternativa.
-
-Atribución indicada por la licencia: **Teaito, Alexandria** — https://fontstruct.com/fontstructions/show/1666931.
-
-## 12. Evidencias para la evaluación
-
-Guarda capturas para demostrar cada punto verificable:
-
-- MySQL Workbench con la base `inv_ff9` y sus tablas.
-- Resultado de la consulta SQL `INNER JOIN` o consultas de relaciones relevantes.
-- Respuesta JSON de `/api/personajes`, `/api/personajes/1/habilidades` y `/api/personajes/1/equipo`.
-- Menú principal con los ocho personajes: cuatro visibles y los restantes mediante scroll.
-- Ventana `Item` mostrando resultados, búsqueda y filtro por tipo.
-- Ventana `Ability` mostrando tanto la pestaña activa como la pasiva.
-- Ventana `Equip` con una arma seleccionada, sus habilidades y las estadísticas actualizadas.
-- Repositorio GitHub con el commit de entrega.
-- `diagrama_bd.png` como evidencia del modelo gráfico de tablas, claves y relaciones (punto extra).
-
-## 13. Lista de control de la rúbrica
-
-| Criterio | Archivo o evidencia |
-|---|---|
-| Estructura de carpetas | `backend/` y `frontend/` separados |
-| Entrega por Git | Repositorio remoto y `git push` |
-| Dump SQL | `backend/datos.sql` |
-| Conexión DB | `backend/server.js` y endpoints JSON |
-| Documentación | Comentarios en `index.html`, `style.css` y `script.js` |
-| Filtro DOM | Búsqueda y filtro por categoría en `Item` |
-| Diseño | CSS del menú FFIX y ventanas de Ability/Equip |
-| Bootstrap | Bootstrap 5.3.3, tabla y controles de formulario |
-| Semántica e indentación | Estructura semántica e indentación consistente |
-| README | `README.rd` en la carpeta raíz (también se entrega `README.md`) |
-| Extra: modelo gráfico | `diagrama_bd.png` |
-
-El diseño y el código quedan preparados para estos criterios, pero la conexión se debe demostrar en tu computador y Git solo cuenta como entregado después de hacer el `push`. No es posible garantizar una calificación específica.
-
-## 14. Subir el proyecto a Git
-
-Abre una terminal en la carpeta raíz `Proyecto_FF9_Web` y ejecuta:
-
-```bash
-git init
-git add .
-git status
-git commit -m "Entrega proyecto web Final Fantasy IX"
-git branch -M main
-git remote add origin URL_DEL_REPOSITORIO
-git push -u origin main
-```
-
-Reemplaza `URL_DEL_REPOSITORIO` por la dirección HTTPS del repositorio creado para la asignatura. Si ya configuraste un remoto, no repitas `git remote add origin`; compruébalo con `git remote -v`.
-
-Antes del `git add`, crea `backend/.env` copiando `.env.example`, pero nunca lo subas. El `.gitignore` excluye `backend/.env` y `node_modules`. Si el `.env` ya se había agregado antes, ejecuta `git rm --cached backend/.env` y vuelve a confirmar los cambios.
 
 ## Referencias de estadísticas originales
 
