@@ -130,6 +130,13 @@ Para evitar mostrar datos ficticios, se respetan estas limitaciones del modelo e
 
 La página inicia los personajes con los valores de nivel 1 de FFIX. Las estadísticas derivadas de cada nivel se calculan con las fórmulas de crecimiento del juego y con los modificadores HP/MP por nivel. Las bonificaciones de equipo se suman al contador de crecimiento cuando se gana un nivel con esa arma equipada. Los valores exactos pueden consultarse en las referencias incluidas al final de este documento.
 
+## 12. Testeo
+Para verificar que todo está cargando correctamente, ingresar en el navegador a las siguientes url: 
+http://localhost:3000 Para probar que carga la base de datos.
+http://localhost:3000/api/personajes/1/habilidades Para probar que cargan las habilidades.
+http://localhost:3000/api/personajes/1/equipo Para probar que cargan los equipos.
+
+
 ## Referencias de estadísticas originales
 
 - KADFC, *Final Fantasy IX Max Stats FAQ*: fórmulas de estadísticas, bonificaciones de equipo y modificadores de HP/MP. https://www.neoseeker.com/final-fantasy-ix/faqs/187371-max-stats.html
