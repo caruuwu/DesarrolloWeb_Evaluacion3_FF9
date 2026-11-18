@@ -32,13 +32,17 @@ Proyecto_FF9_Web/
 - Visual Studio Code y Live Server.
 - Navegador moderno.
 
-## 3. Base de datos `inv_ff9`
+## 3. Fuente Alexandria
+
+Antes de iniciar, para una mayor inmersión, se recomienda instalar la fuente 'Alexandria' que es la fuente del juego original, está incluida en la carpeta frontend/assets/fonts.
+
+## 4. Base de datos `inv_ff9`
 
 El backend consulta las tablas originales del dump: `personaje`, `activa_pj`, `habilidad_activa`, `pasiva_pj`, `habilidad_pasiva`, `objeto`, `tipo`, `equipo`, `atributo`, `equipo_por_personaje`, `equipo_habilidad_activa` y `equipo_habilidad_pasiva`.
 
 **Advertencia:** `backend/datos.sql` es un dump completo y contiene `DROP TABLE IF EXISTS`. Si ya tienes `inv_ff9` con los datos importados, no vuelvas a ejecutar el dump sin hacer una copia de seguridad. La aplicación funciona con las tablas existentes y no necesita recrearlas.
 
-## 4. Configurar MySQL
+## 5. Configurar MySQL
 
 Copia la plantilla de configuración a `.env` desde la carpeta `backend`.
 
@@ -64,7 +68,7 @@ Sustituye `TU_CLAVE_MYSQL` por tu contraseña. Si tu usuario no tiene contraseñ
 
 No compartas el archivo `.env` ni lo subas a Git. Está excluido por `.gitignore`.
 
-## 5. Iniciar el backend
+## 6. Iniciar el backend
 
 Abre una terminal en `Proyecto_FF9_Web/backend` y ejecuta:
 
@@ -75,7 +79,7 @@ npm run dev
 
 La terminal debe indicar que Express está escuchando en `http://localhost:3000` y que la base configurada es `inv_ff9`.
 
-## 6. Rutas locales utilizadas por el frontend
+## 7. Rutas locales utilizadas por el frontend
 
 Estas rutas pertenecen al servidor Express de este proyecto. No se consume ninguna API externa ni existe una ruta `/api/health`.
 
@@ -90,7 +94,7 @@ Puedes abrir estas rutas directamente en el navegador para comprobar las respues
 
 Si el navegador indica que no se puede conectar a `localhost:3000`, confirma que el proceso `npm run dev` sigue activo. Si recibes un error JSON, revisa el código del error y el mensaje de la terminal; el backend no sustituye los registros fallidos por datos de demostración.
 
-## 7. Iniciar el frontend
+## 8. Iniciar el frontend
 
 1. Abre `Proyecto_FF9_Web/frontend` en Visual Studio Code.
 2. Haz clic derecho en `index.html`.
@@ -99,7 +103,7 @@ Si el navegador indica que no se puede conectar a `localhost:3000`, confirma que
 
 Mantén MySQL Server, Express y Live Server activos mientras utilizas la aplicación.
 
-## 8. Funcionamiento de la interfaz
+## 9. Funcionamiento de la interfaz
 
 - La pantalla principal está limitada a la altura visible del navegador. El panel izquierdo muestra cuatro personajes y permite desplazarse para ver los otros cuatro.
 - Al entrar, cada personaje comienza en nivel 1.
@@ -113,7 +117,7 @@ Mantén MySQL Server, Express y Live Server activos mientras utilizas la aplicac
 - `Status` no se presenta como una pantalla separada: las estadísticas ya aparecen en el menú `Equip`, como en la referencia solicitada.
 - El reloj muestra la hora local del computador. Los Guiles se generan aleatoriamente entre 100 y 100.000 al cargar la página.
 
-## 9. Límites reales del dump SQL
+## 10. Límites reales del dump SQL
 
 Para evitar mostrar datos ficticios, se respetan estas limitaciones del modelo entregado:
 
@@ -122,7 +126,7 @@ Para evitar mostrar datos ficticios, se respetan estas limitaciones del modelo e
 3. `personaje` contiene `Pj_Vit_Max`, `Pj_PM_Max` y `Pj_PieMag_Max`, pero no son las estadísticas de nivel 1 del juego en todos los casos y no hay tabla de niveles/experiencia. Las estadísticas iniciales de nivel 1 y las tablas de crecimiento se han tomado de referencias de FFIX; el avance se guarda localmente porque el SQL no tiene columnas para persistirlo.
 4. La tabla `inventario` contiene datos de registros/partidas (sección, personaje, tiempo, guiles y locación), no una relación de cantidades de objetos.
 
-## 10. Estadísticas y crecimiento
+## 11. Estadísticas y crecimiento
 
 La página inicia los personajes con los valores de nivel 1 de FFIX. Las estadísticas derivadas de cada nivel se calculan con las fórmulas de crecimiento del juego y con los modificadores HP/MP por nivel. Las bonificaciones de equipo se suman al contador de crecimiento cuando se gana un nivel con esa arma equipada. Los valores exactos pueden consultarse en las referencias incluidas al final de este documento.
 
