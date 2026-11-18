@@ -132,9 +132,9 @@ La página inicia los personajes con los valores de nivel 1 de FFIX. Las estadí
 
 ## 12. Testeo
 Para verificar que todo está cargando correctamente, ingresar en el navegador a las siguientes url: 
-http://localhost:3000 Para probar que carga la base de datos.
-http://localhost:3000/api/personajes/1/habilidades Para probar que cargan las habilidades.
-http://localhost:3000/api/personajes/1/equipo Para probar que cargan los equipos.
+- http://localhost:3000 Para probar que carga la base de datos.
+- http://localhost:3000/api/personajes/1/habilidades Para probar que cargan las habilidades.
+- http://localhost:3000/api/personajes/1/equipo Para probar que cargan los equipos.
 
 
 ## Referencias de estadísticas originales
