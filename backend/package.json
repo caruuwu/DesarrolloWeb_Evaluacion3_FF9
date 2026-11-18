@@ -1,0 +1,16 @@
+{
+  "name": "ff9-inventario-backend",
+  "version": "3.0.0",
+  "description": "Backend local para consultar el inventario de Final Fantasy IX usando MySQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  }
+}
